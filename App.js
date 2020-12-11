@@ -16,6 +16,8 @@ import QuizScreen from './src/screens/Quiz';
 
 import {Provider} from 'react-redux';
 import store from './store';
+import TopicScreen from './src/screens/Topic';
+import ResultScreen from './src/screens/Quiz/result';
 
 const Stack = createStackNavigator();
 const App: () => React$Node = () => {
@@ -28,11 +30,9 @@ const App: () => React$Node = () => {
             component={HomeScreen}
             options={{headerShown: false}}
           />
-          <Stack.Screen
-            name="Quiz"
-            component={QuizScreen}
-            options={{headerShown: false}}
-          />
+          <Stack.Screen name="Quiz" component={QuizScreen} />
+          <Stack.Screen name="Topic" component={TopicScreen} />
+          <Stack.Screen name="Result" component={ResultScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
