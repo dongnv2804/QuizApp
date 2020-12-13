@@ -3,10 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
   questions: [],
   dataquestion: [],
-  result: {
-    score: 0,
-    countCorrect: 0,
-  },
+  result: null,
 };
 
 const slice = createSlice({
@@ -24,6 +21,9 @@ const slice = createSlice({
     getResultSuccess: (state, action) => {
       return {...state, result: action.payload};
     },
+    resetState: (state, action) => {
+      return {...state, questions: [], dataquestion: [], result: null};
+    },
   },
 });
 
@@ -31,5 +31,6 @@ export const {
   getQuestionsSuccess,
   addDataAnswerSuccess,
   getResultSuccess,
+  resetState,
 } = slice.actions;
 export default slice.reducer;

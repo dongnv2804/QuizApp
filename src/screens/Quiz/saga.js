@@ -24,7 +24,6 @@ function* addDataAnswer({payload}) {
 function* getResult({payload}) {
   try {
     const data = yield call(getResultService, payload);
-    console.log(data);
     yield put(sliceAct.getResultSuccess(data));
   } catch (error) {
     console.log(error);

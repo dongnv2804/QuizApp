@@ -11,8 +11,11 @@ const slice = createSlice({
     getTopicSuccess: (state, action) => {
       return {...state, topics: action.payload};
     },
+    resetData: (state, action) => {
+      return {...state, topics: []};
+    },
   },
 });
 
-export const {getTopicSuccess} = slice.actions;
+export const {getTopicSuccess, resetData} = slice.actions;
 export default slice.reducer;

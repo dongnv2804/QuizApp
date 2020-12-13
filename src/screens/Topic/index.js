@@ -1,6 +1,7 @@
 import {Container, List, ListItem, Text} from 'native-base';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {Loading} from '../../components';
 import * as action from './action';
 
 const TopicScreen = ({navigation}) => {
@@ -9,6 +10,9 @@ const TopicScreen = ({navigation}) => {
   useEffect(() => {
     dispatch(action.getTopics());
   }, [dispatch]);
+  if (topics.length === 0) {
+    return <Loading />;
+  }
   return (
     <Container>
       <List

@@ -10,7 +10,6 @@ export const getQuestionsByTopic = ({topicId}) => {
 };
 
 export const getResultService = (dataquestion) => {
-  console.log(dataquestion);
   return api
     .post('/getscore', {
       dataquestion: dataquestion,
@@ -22,7 +21,3 @@ export const getResultService = (dataquestion) => {
       console.log(err);
     });
 };
-
-// 		api.GET("/question/:topicid", controllers.GetQuestionByTopicID)
-// 		api.POST("/question/create", controllers.AddQuestion)
-// 		api.POST("/getscore", controllers.CaculatorScore)
